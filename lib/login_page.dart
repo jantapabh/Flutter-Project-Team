@@ -55,6 +55,8 @@ class _LoginPageState extends State<LoginPage>{
       print('Register user : ${user.uid}');
     }
   }
+
+
     catch(e){
     print('Error :  $e');
 
