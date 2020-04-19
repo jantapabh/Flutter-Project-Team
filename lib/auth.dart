@@ -4,6 +4,7 @@ import 'package:project/auth.dart';
 
 abstract class BaseAuth {
   Future<String> signInWithEmailAndPassword(String email, String password);
+  Future<String> createUserWithEmailAndPassword(String email, String password);
 }
 
 class Auth implements BaseAuth {
