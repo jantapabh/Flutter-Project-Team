@@ -10,6 +10,7 @@ class LoginPage extends StatefulWidget {
 
 }
 
+
 enum FormType {
 
   login,
