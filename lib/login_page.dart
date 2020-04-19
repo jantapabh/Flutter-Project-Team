@@ -11,12 +11,23 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage>{
 
+  final formKey = new GlobalKey<FormState>();
+
   String _email;
   String _password;
 
   void validateAndSave(){
 
+    final form = formKey.currentState;
+    if(form.validate()){
 
+      print('Form is valid')
+
+    }else{
+
+      print('Form is invalid');
+
+    }
   }
 
   @override
@@ -32,10 +43,13 @@ class _LoginPageState extends State<LoginPage>{
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 new TextFormField(
-                  decoration: new InputDecoration(labelText: 'Email' ),),
+                  decoration: new InputDecoration(labelText: 'Email' ),
+                  validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null
+                  ),
                   new TextFormField(
                     decoration: new InputDecoration(labelText: 'Password'),
                     obscureText: true,
+                    validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
                   ),
                   new RaisedButton(
                     child: new Text('Login', style: new TextStyle(fontSize: 20.0)),
