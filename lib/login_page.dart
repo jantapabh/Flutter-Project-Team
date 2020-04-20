@@ -88,8 +88,15 @@ class _LoginPageState extends State<LoginPage> {
 
   List<Widget> buildImages() {
     return [
-      new Text('CAT SHPO APP', style: new TextStyle( fontSize: 30, fontWeight: FontWeight.bold, color: Colors.orange),),
-      new Image.asset('assets/images/cat.jpg', width: 100, height: 100,)
+      new Column(children: <Widget>[
+       Row(children: <Widget>[
+         new  Text('CAT SHPO APP', style: new TextStyle( fontSize: 30, fontWeight: FontWeight.bold, color: Colors.orange),),
+       ],),
+       Row(children: <Widget>[
+        new Image.asset('assets/images/cat.jpg', width: 100, height: 100,)
+       ],
+       )
+      ],)   
     ];
   }
 
