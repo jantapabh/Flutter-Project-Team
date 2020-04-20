@@ -11,9 +11,29 @@ class RootPage extends StatefulWidget {
   State<StatefulWidget> createState() => new _RootPageState();
 }
 
+enum AuthStatus{
+
+  notSignedIn,
+  signedIn
+}
+
 class _RootPageState extends State<RootPage> {
+
+  AuthStatus _authStatus = AuthStatus.notSignedIn;
+
+
   @override
   Widget build(BuildContext context) {
-    return new LoginPage(auth: widget.auth);
+
+    switch(_authStatus){
+
+      case AuthStatus.notSignedIn:
+       return new LoginPage(auth: widget.auth);
+
+      case AuthStatus.signedIn:
+      return new Container(
+        child: new Text('Welcome')
+      );
+    }
   }
 }
