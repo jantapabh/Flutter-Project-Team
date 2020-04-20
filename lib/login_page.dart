@@ -72,12 +72,12 @@ class _LoginPageState extends State<LoginPage> {
         appBar: new AppBar(
           title: new Center(
               child: Text(
-            'SHOP CAT APP',
-            style: new TextStyle(fontSize: 30, color: Colors.black),
+            'SHOP CAT ',
+            style: new TextStyle(fontSize: 30, color: Colors.white,),
           )),
         ),
         body: new Container(
-        
+            color: Colors.white,
             padding: EdgeInsets.all(16.0),
             child: new Form(
                 key: formKey,
@@ -86,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                    new Column(
                      mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Image.asset('assets/images/shopcat.png')
+                      Image.asset('assets/images/shopcat.png', width: 75,)
                     ],
                    ),
                    new Column(
