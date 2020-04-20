@@ -71,35 +71,33 @@ class _LoginPageState extends State<LoginPage> {
     return new Scaffold(
         appBar: new AppBar(
           title: new Center(
-           child: Text('SHOP CAT APP', style: new TextStyle(fontSize: 30, color: Colors.black ),)
-          ),
+              child: Text(
+            'SHOP CAT APP',
+            style: new TextStyle(fontSize: 30, color: Colors.black),
+          )),
         ),
         body: new Container(
+        
             padding: EdgeInsets.all(16.0),
-         child: new Form(
+            child: new Form(
                 key: formKey,
                 child: new Column(
+                 children: <Widget>[
+                   new Column(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset('assets/images/shopcat.png')
+                    ],
+                   ),
+                   new Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: buildImages() + buildInputs() + buildSubmitButtons(),
+                  children: buildInputs() + buildSubmitButtons(),
+                   )
+                 ],
                 )
                 )
                 ));
   }
-
-  List<Widget> buildImages() {
-    return [
-      new Column(children: <Widget>[
-       Row(children: <Widget>[
-         new  Text('CAT SHPO APP', style: new TextStyle( fontSize: 30, fontWeight: FontWeight.bold, color: Colors.orange),),
-       ],),
-       Row(children: <Widget>[
-        new Image.asset('assets/images/cat.jpg', width: 100, height: 100,)
-       ],
-       )
-      ],)   
-    ];
-  }
-
 
   List<Widget> buildInputs() {
     return [
