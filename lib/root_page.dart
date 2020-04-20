@@ -19,21 +19,14 @@ class _RootPageState extends State<RootPage> {
   initState() {
     super.initState();
     widget.auth.currentUser().then((userId) {
-      setState(() {
-        // authStatus =
-        //     userId == null ? AuthStatus.notSignedIn : AuthStatus.signedIn;
-      });
+      setState(() {});
     });
   }
 
-  void _signedIn(){
-
+  void _signedIn() {
     setState(() {
-      
       authStatus = AuthStatus.signedIn;
-      
     });
-
   }
 
   @override
@@ -41,15 +34,13 @@ class _RootPageState extends State<RootPage> {
     switch (authStatus) {
       case AuthStatus.notSignedIn:
         return new LoginPage(
-
           auth: widget.auth,
           onSignedIn: _signedIn,
-         
         );
       case AuthStatus.signedIn:
         return new Scaffold(
-          body: new Container(
-            child: new Text('Welcome'),
+            body: new Container(
+          child: new Text('Welcome'),
         ));
     }
   }

@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'auth.dart';
 
-
 class LoginPage extends StatefulWidget {
-  
   LoginPage({this.auth, this.onSignedIn});
   final BaseAuth auth;
 
@@ -39,16 +37,17 @@ class _LoginPageState extends State<LoginPage> {
     if (validateAndSave()) {
       try {
         if (_formType == FormType.login) {
-          String userId = await widget.auth.signInWithEmailAndPassword(_email, _password);
+          String userId =
+              await widget.auth.signInWithEmailAndPassword(_email, _password);
           print('Signed in: $userId');
         } else {
-          String userId = await widget.auth.createUserWithEmailAndPassword(_email, _password);
+          String userId = await widget.auth
+              .createUserWithEmailAndPassword(_email, _password);
           print('Register user : $userId');
         }
 
         widget.onSignedIn();
-      } 
-      catch (e) {
+      } catch (e) {
         print('Error :  $e');
       }
     }
